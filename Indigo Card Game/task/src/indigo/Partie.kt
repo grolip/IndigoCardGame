@@ -73,8 +73,7 @@ class Partie {
     }
 
     private fun calculerPoints(cartesEnJeu: TasDeCartes) =
-        cartesEnJeu.cartes.fold(0) { acc, carte ->
-            acc + if (carte.valeur in VALEURS_GAGNANTES ) 1 else 0 }
+        cartesEnJeu.cartes.count { it.valeur in VALEURS_GAGNANTES }
 
     private fun resolutionManche(carte: Carte){
         var carteActuelle: Carte? = null
